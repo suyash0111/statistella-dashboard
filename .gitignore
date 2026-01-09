@@ -19,7 +19,7 @@ Thumbs.db
 # Streamlit
 .streamlit/secrets.toml
 
-# Large data files (host separately on Kaggle/Google Drive)
+# Large data files (CSVs are too big, use zips instead)
 *.csv
-*.zip
+
 

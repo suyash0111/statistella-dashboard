@@ -75,6 +75,16 @@ st.markdown("""
 @st.cache_data
 def load_and_clean_data():
     """Load and preprocess all NBA data files."""
+    import zipfile
+    import os
+    
+    # Extract CSVs from zips if they don't exist
+    zip_files = ['games.csv.zip', 'ranking.csv.zip', 'games_details.csv.zip']
+    for zf in zip_files:
+        csv_name = zf.replace('.zip', '')
+        if not os.path.exists(csv_name) and os.path.exists(zf):
+            with zipfile.ZipFile(zf, 'r') as z:
+                z.extractall('.')
     
     # Load CSVs
     games = pd.read_csv('games.csv')
