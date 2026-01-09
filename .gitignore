@@ -19,7 +19,10 @@ Thumbs.db
 # Streamlit
 .streamlit/secrets.toml
 
-# Large data files (CSVs are too big, use zips instead)
-*.csv
+# Large data files only (teams.csv and players.csv are small, keep them)
+games.csv
+ranking.csv
+games_details.csv
+
 
 
